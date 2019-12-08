@@ -8,9 +8,12 @@ namespace PortfolioWebsite.Controllers
 {
     public class ProjectsController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from ProjectController Detail!";
+            return new ContentResult()
+            {
+                Content = "Oh hello!"
+            };
         }
     }
 }
