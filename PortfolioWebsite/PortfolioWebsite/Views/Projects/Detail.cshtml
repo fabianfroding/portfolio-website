@@ -1,36 +1,23 @@
 ﻿@{
-    Layout = null;
-
-    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Project Title";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+<h1>@ViewBag.ProjectTitle</h1>
+<p>Type: @ViewBag.Type</p>
+<div>@Html.Raw(ViewBag.Description)</div>
+@if (ViewBag.Pictures.Length > 0)
+{
     <div>
-        <h1>@ViewBag.ProjectTitle</h1>
-        <p>Type: @ViewBag.Type</p>
-        <div>@Html.Raw(ViewBag.Description)</div>
-        @if (ViewBag.Pictures.Length > 0)
-        {
-            <div>
-                <h2>Pictures:</h2>
-                <ul>
-                    @foreach (var picture in ViewBag.Pictures)
-                    {
-                        <li>
-                            <p>@picture</p>
-                        </li>
-                    }
-                </ul>
-            </div>
-        }
-
+        <h2>Pictures:</h2>
+        <ul>
+            @foreach (var picture in ViewBag.Pictures)
+            {
+                <li>
+                    <p>@picture</p>
+                </li>
+            }
+        </ul>
     </div>
-</body>
-</html>
+}

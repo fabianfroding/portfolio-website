@@ -1,0 +1,36 @@
+﻿body {
+    background-color: #14171c;
+    margin: 0;
+    padding-top: 250px;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+}
+
+li {
+    color: #ffffff;
+    list-style: none;
+}
+
+a:hover {
+    color: #c89960;
+}
+
+a:link, :visited {
+    color: #ffffff;
+}
+
+/* -------------------------
+    Media Queries
+------------------------- */
+
+@media (min-width: 980px) {
+    body {
+        padding-top: 70px;
+    }
+}

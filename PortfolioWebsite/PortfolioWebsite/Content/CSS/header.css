@@ -1,0 +1,82 @@
+﻿/* -------------------------
+    Main Styles
+------------------------- */
+
+.main-header, .nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1d24;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 3px rgb(0, 0, 0, .4);
+    z-index: 1;
+}
+
+.nav {
+    position: relative;
+    padding-right: 1em;
+}
+
+.site-logo {
+    width: 110px;
+    align-self: center;
+    padding-left: 1em;
+}
+
+    .site-logo img {
+        width: 85px;
+        height: 41px;
+    }
+
+.nav a {
+    display: block;
+    color: #ffffff;
+    font-size: 1.125em;
+    font-weight: 300;
+    text-align: center;
+    padding: .4em;
+    padding-top: 1em;
+    text-decoration: none;
+}
+
+    .nav a:hover {
+        color: #c89960;
+    }
+
+/* -------------------------
+    Media Queries
+------------------------- */
+
+@media (min-width: 980px) {
+    .main-header {
+        height: 80px;
+        justify-content: flex-end; /* Places main header at bottom/end of column */
+        flex-direction: row;
+        padding-bottom: 0;
+    }
+
+    .site-logo {
+        width: 140px;
+        margin-right: auto;
+    }
+
+    .nav {
+        margin-top: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-self: center;
+    }
+
+        .nav a {
+            border-bottom-color: transparent;
+        }
+
+        .nav li {
+            margin-left: .65em;
+            margin-right: 0.65em;
+        }
+}

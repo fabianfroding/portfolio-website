@@ -1,40 +1,100 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
+    <title>@ViewBag.Title | A List of My Projects</title>
+
+    <link rel="stylesheet" href="~/Content/CSS/base.css" />
+    <link rel="stylesheet" href="~/Content/CSS/header.css" />
+    <link rel="stylesheet" href="~/Content/CSS/dropdown.css" />
+    <link rel="stylesheet" href="~/Content/CSS/content.css" />
+    <link rel="stylesheet" href="~/Content/CSS/slideshow.css" />
+
+    <script src="~/Scripts/stickynav.js"></script>
+    <script src="~/Scripts/slideshow.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- start header -->
+        <header class="main-header">
+            <a class="site-logo" href="/"><img src="resources/img/logo.png" alt="Logo"></a>
+            <ul class="nav">
+                <li><a href="news.html">News</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a class="droplink" href="games.html">Games & Mods</a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="games-vod.html">Vault of Darkness</a></li>
+                                <li><a href="games-vod.html">Celestial Walkway</a></li>
+                                <li><a href="games-vod.html">Bounty Hunters</a></li>
+                                <li><a href="games-vod.html">Deepearth Caverns</a></li>
+                                <li><a href="games-vod.html">RPG</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="art.html">Art</a></li>
+            </ul>
+        </header>
+        <!-- end header -->
+
+        <div class="container body-content">
+            <!-- @RenderBody() -->
+            <!-- start slideshow -->
+            <div class="slideshow">
+                <img class="slides" src="resources/screenshots-vod/1.png">
+                <div class="slideshow-sub">
+                    <img class="slides fade" src="resources/screenshots-vod/2.png">
+                    <img class="slides fade" src="resources/screenshots-vod/3.jpg">
+                    <img class="slides fade" src="resources/screenshots-vod/4.png">
+                </div>
+                <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="next" onclick="plusDivs(+1)">&#10095;</button>
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+            <!-- end slideshow -->
+            <!-- start blog posts-->
+            <div class="main-content">
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+                <br>
+                <p>Alot of text.</p><br>
+            </div>
+            <!-- end blod posts -->
+        </div>
+
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p><small>&copy;2019 Fabian Fröding</small></p>
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
+
 </html>
