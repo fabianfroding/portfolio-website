@@ -10,10 +10,7 @@ namespace PortfolioWebsite.Controllers
     {
         public ActionResult Detail()
         {
-            return new ContentResult()
-            {
-                Content = "Oh hello!"
-            };
+            return View();
         }
     }
 }
