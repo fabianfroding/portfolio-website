@@ -24,7 +24,21 @@
         <h1>@projectTitle</h1>
         <p>Type: @type</p>
         <div>@Html.Raw(description)</div>
-        <div>@pictures</div>
+        @if (pictures.Length > 0)
+        {
+            <div>
+                <h2>Pictures:</h2>
+                <ul>
+                    @foreach (var picture in pictures)
+                    {
+                        <li>
+                            <p>@picture</p>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+
     </div>
 </body>
 </html>
