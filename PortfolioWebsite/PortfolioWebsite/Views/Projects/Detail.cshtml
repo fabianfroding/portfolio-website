@@ -1,5 +1,15 @@
 ﻿@{
     Layout = null;
+
+    var projectTitle = "Vault of Darkness";
+    var description = "A mod for Warcraft III";
+    var type = "Game Mod";
+    var pictures = new String[]
+    {
+        "Pic1",
+        "Pic2",
+        "Pic3"
+    };
 }
 
 <!DOCTYPE html>
@@ -11,7 +21,10 @@
 </head>
 <body>
     <div>
-        <h1>Hello from our view!</h1>
+        <h1>@projectTitle</h1>
+        <p>Type: @type</p>
+        <div>@Html.Raw(description)</div>
+        <div>@pictures</div>
     </div>
 </body>
 </html>
