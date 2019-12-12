@@ -1,4 +1,5 @@
-﻿using PortfolioWebsite.Models;
+﻿using PortfolioWebsite.Data;
+using PortfolioWebsite.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,18 @@ namespace PortfolioWebsite.Controllers
 {
     public class ProjectsController : Controller
     {
-        public ActionResult Detail()
+        private ProjectRepository _projectRepository = null;
+        public ProjectsController()
         {
-            var project = new Project()
+            _projectRepository = new ProjectRepository();
+        }
+        public ActionResult Detail(int? id)
+        {
+            if (id == null)
             {
-                ProjectTitle = "Vault of Darkness",
-                Description = "A mod for Warcraft III",
-                Images = new String[]
-                {
-                    "~/Images/screenshots-vod/1.png",
-                    "~/Images/screenshots-vod/2.png",
-                    "~/Images/screenshots-vod/3.jpg"
-                }
-            };
+                return HttpNotFound();
+            }
+            var project = _projectRepository.GetProject(id.Value);
             return View(project);
         }
     }

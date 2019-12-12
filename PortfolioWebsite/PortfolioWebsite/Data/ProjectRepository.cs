@@ -12,6 +12,7 @@ namespace PortfolioWebsite.Data
         {
             new Project()
             {
+                Id = 1,
                 ProjectTitle = "Vault of Darkness",
                 Description = "A mod for Warcraft III",
                 Images = new String[]
@@ -23,6 +24,7 @@ namespace PortfolioWebsite.Data
             },
             new Project()
             {
+                Id = 2,
                 ProjectTitle = "Celestial Walkway",
                 Description = "A mod for Warcraft III",
                 Images = new String[]
@@ -34,6 +36,7 @@ namespace PortfolioWebsite.Data
             },
             new Project()
             {
+                Id = 3,
                 ProjectTitle = "RPG",
                 Description = "A mod for Warcraft III",
                 Images = new String[]
