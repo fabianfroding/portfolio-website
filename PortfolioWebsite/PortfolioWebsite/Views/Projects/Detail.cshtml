@@ -1,20 +1,22 @@
-﻿@{
+﻿@model PortfolioWebsite.Models.Project
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Project Title";
+    ViewBag.Title = Model.DisplayText;
 }
 
 
-<h1>@ViewBag.ProjectTitle</h1>
-<div>@Html.Raw(ViewBag.Description)</div>
-@if (ViewBag.Pictures.Length > 0)
+<h1>@Model.ProjectTitle</h1>
+<div>@Html.Raw(Model.Description)</div>
+@if (Model.Images.Length > 0)
 {
     <div>
         <h2>Pictures:</h2>
         <ul>
-            @foreach (var picture in ViewBag.Pictures)
+            @foreach (var image in Model.Images)
             {
                 <li>
-                    <p>@picture</p>
+                    <p>@image</p>
                 </li>
             }
         </ul>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortfolioWebsite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,15 +11,18 @@ namespace PortfolioWebsite.Controllers
     {
         public ActionResult Detail()
         {
-            ViewBag.ProjectTitle = "Vault of Darkness";
-            ViewBag.Description = "A mod for Warcraft III";
-            ViewBag.Pictures = new String[]
+            var project = new Project()
             {
-                "Pic1",
-                "Pic2",
-                "Pic3"
+                ProjectTitle = "Vault of Darkness",
+                Description = "A mod for Warcraft III",
+                Images = new String[]
+                {
+                    "~/Images/screenshots-vod/1.png",
+                    "~/Images/screenshots-vod/2.png",
+                    "~/Images/screenshots-vod/3.jpg"
+                }
             };
-            return View();
+            return View(project);
         }
     }
 }
