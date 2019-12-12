@@ -15,6 +15,11 @@ namespace PortfolioWebsite.Controllers
         {
             _projectRepository = new ProjectRepository();
         }
+        public ActionResult Index()
+        {
+            var projects = _projectRepository;
+            return View(projects);
+        }
         public ActionResult Detail(int? id)
         {
             if (id == null)

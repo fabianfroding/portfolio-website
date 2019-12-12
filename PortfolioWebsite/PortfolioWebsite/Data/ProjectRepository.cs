@@ -47,6 +47,10 @@ namespace PortfolioWebsite.Data
                 }
             }
         };
+        public Project[] GetProjects()
+        {
+            return _Projects;
+        }
         public Project GetProject(int Id)
         {
             foreach (var project in _Projects)
@@ -57,10 +61,6 @@ namespace PortfolioWebsite.Data
                 }
             }
             return null;
-        }
-        public Project[] GetProjects()
-        {
-            return _Projects;
         }
     }
 }
