@@ -17,7 +17,7 @@ namespace PortfolioWebsite.Controllers
         }
         public ActionResult Index()
         {
-            var projects = _projectRepository;
+            var projects = _projectRepository.GetProjects();
             return View(projects);
         }
         public ActionResult Detail(int? id)

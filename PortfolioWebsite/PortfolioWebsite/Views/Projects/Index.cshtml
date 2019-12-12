@@ -1,16 +1,16 @@
-﻿
+﻿@model PortfolioWebsite.Models.Project[]
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Projects";
 }
 
 <!-- start slideshow -->
 <div class="slideshow">
-    <img class="slides" src="resources/screenshots-vod/1.png">
+    <img class="slides" src="~/Images/screenshots-vod/1.png">
     <div class="slideshow-sub">
-        <img class="slides fade" src="resources/screenshots-vod/2.png">
-        <img class="slides fade" src="resources/screenshots-vod/3.jpg">
-        <img class="slides fade" src="resources/screenshots-vod/4.png">
+        <img class="slides fade" src="~/Images/screenshots-vod/2.png">
+        <img class="slides fade" src="~/Images/screenshots-vod/3.jpg">
+        <img class="slides fade" src="~/Images/screenshots-vod/4.png">
     </div>
     <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
     <button class="next" onclick="plusDivs(+1)">&#10095;</button>
@@ -22,6 +22,14 @@
     </div>
 </div>
 <!-- end slideshow -->
+
+@foreach (var project in Model)
+{
+    <h1>project.ProjectTitle</h1>
+    <p>project.Description</p>
+    <img src=project.Images[0]>
+}
+
 <!-- start blog posts-->
 <div class="main-content">
     <p>Alot of text.</p><br>
