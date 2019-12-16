@@ -19,20 +19,7 @@
 
 <body>
     <div class="container">
-
-        <!-- start header -->
-        <header class="main-header">
-            <a class="site-logo" href="/">
-                <img src="~/Images/logo.png" alt="Logo">
-            </a>
-            <ul class="nav">
-                <li><a href="/">Software</a></li>
-                <li><a href="@Url.Action("Index")">Mods</a></li>
-                <li><a href="/">Art</a></li>
-                <li><a href="/">About</a></li>
-            </ul>
-        </header>
-        <!-- end header -->
+        @Html.Partial("_Header");
 
         <div class="container body-content">
             <!-- @RenderBody() -->
@@ -46,5 +33,4 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
-
 </html>

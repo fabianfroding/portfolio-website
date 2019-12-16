@@ -8,7 +8,7 @@ namespace PortfolioWebsite.Data
 {
     public class ProjectRepository
     {
-        private static Project[] _Projects = new Project[]
+        private static Project[] _projects = new Project[]
         {
             new Project()
             {
@@ -49,18 +49,20 @@ namespace PortfolioWebsite.Data
         };
         public Project[] GetProjects()
         {
-            return _Projects;
+            return _projects;
         }
-        public Project GetProject(int Id)
+        public Project GetProject(int id)
         {
-            foreach (var project in _Projects)
+            Project projectToReturn = null;
+            foreach (var project in _projects)
             {
-                if (project.Id == Id)
+                if (project.Id == id)
                 {
-                    return project;
+                    projectToReturn = project;
+                    break;
                 }
             }
-            return null;
+            return projectToReturn;
         }
     }
 }

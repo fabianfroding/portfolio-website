@@ -6,6 +6,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+/* Action Result return types:
+ * View(model);
+ * Content("message");
+ * HttpNotFound();
+ * new EmptyResult();
+ * RedirectToAction("Index", "Home", new {page = 1, , sortBy="name");
+ * */
+
 namespace PortfolioWebsite.Controllers
 {
     public class ProjectsController : Controller
