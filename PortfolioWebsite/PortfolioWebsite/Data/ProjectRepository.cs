@@ -53,16 +53,14 @@ namespace PortfolioWebsite.Data
         }
         public Project GetProject(int id)
         {
-            Project projectToReturn = null;
             foreach (var project in _projects)
             {
                 if (project.Id == id)
                 {
-                    projectToReturn = project;
-                    break;
+                    return project;
                 }
             }
-            return projectToReturn;
+            return null;
         }
     }
 }
