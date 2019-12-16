@@ -1,12 +1,12 @@
 ﻿@model PortfolioWebsite.Models.Project
 
 @{
-    ViewBag.PageTitle = Model.ProjectTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.PageTitle = Model.Title;
 }
 
-
-<h1>@Model.ProjectTitle</h1>
-<div>@Html.Raw(Model.Description)</div>
+<h1>@Model.Title</h1>
+<div>@Model.Description</div>
 @if (Model.Images.Length > 0)
 {
     <div>

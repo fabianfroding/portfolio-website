@@ -22,25 +22,14 @@
 
         <!-- start header -->
         <header class="main-header">
-            <a class="site-logo" href="/"><img src="resources/img/logo.png" alt="Logo"></a>
+            <a class="site-logo" href="/">
+                <img src="~/Images/logo.png" alt="Logo">
+            </a>
             <ul class="nav">
-                <li><a href="news.html">News</a></li>
-                <li><a href="software.html">Software</a></li>
-                <li>
-                    <div class="dropdown">
-                        <a class="droplink" href="games.html">Games & Mods</a>
-                        <div class="dropdown-content">
-                            <ul>
-                                <li><a href="games-vod.html">Vault of Darkness</a></li>
-                                <li><a href="games-vod.html">Celestial Walkway</a></li>
-                                <li><a href="games-vod.html">Bounty Hunters</a></li>
-                                <li><a href="games-vod.html">Deepearth Caverns</a></li>
-                                <li><a href="games-vod.html">RPG</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="art.html">Art</a></li>
+                <li><a href="/">Software</a></li>
+                <li><a href="@Url.Action("Index")">Mods</a></li>
+                <li><a href="/">Art</a></li>
+                <li><a href="/">About</a></li>
             </ul>
         </header>
         <!-- end header -->
