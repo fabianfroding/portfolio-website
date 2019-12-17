@@ -28,7 +28,9 @@
 {
     <h1>@Html.ActionLink(project.Title, "Detail", new { id = project.Id })</h1>
     <a href="@Url.Action("Detail", new { id = project.Id })">
-        <img class="project-preview" src="@Url.Content(project.Images[0])">
+        <div class="project-preview">
+            <img src="@Url.Content(project.Images[0])">
+        </div>
     </a>
     <p>@project.Description</p>
 }

@@ -25,8 +25,8 @@ namespace PortfolioWebsite.Data
             new Project()
             {
                 Id = 2,
-                Title = "Celestial Walkway",
-                Description = "A mod for Warcraft III",
+                Title = "My siberia notebook",
+                Description = "An app to register events in siberia",
                 Images = new String[]
                 {
                     "~/Images/screenshots-vod/1.png",
@@ -37,8 +37,8 @@ namespace PortfolioWebsite.Data
             new Project()
             {
                 Id = 3,
-                Title = "RPG",
-                Description = "A mod for Warcraft III",
+                Title = "Wish",
+                Description = "A game in unity",
                 Images = new String[]
                 {
                     "~/Images/screenshots-vod/1.png",
