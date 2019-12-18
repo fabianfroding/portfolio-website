@@ -93,7 +93,6 @@
     <Content Include="Content\CSS\dropdown.css" />
     <Content Include="Content\CSS\header.css" />
     <Content Include="Content\CSS\index-list.css" />
-    <Content Include="Content\CSS\mobile-nav.css" />
     <Content Include="Content\CSS\slideshow.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\screenshots-vod\1.png" />
@@ -108,7 +107,6 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\mobile-nav.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\slideshow.js" />
     <Content Include="Scripts\stickynav.js" />

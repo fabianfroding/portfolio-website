@@ -1,21 +1,15 @@
-﻿<!-- Hamburger menu icon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- start header -->
-<header class="main-header">
-    <a class="site-logo" href="/">
-        <img src="~/Images/logo.png" alt="Logo">
-    </a>
-    <ul class="nav">
-        <li><a href="/">Software</a></li>
-        <li><a href="@Url.Action("Index")">Mods</a></li>
-        <li><a href="/">Art</a></li>
-        <li><a href="/">About</a></li>
-    </ul>
-</header>
+﻿<!-- start header -->
+    <header class="main-header">
+        <a class="site-logo" href="/">
+            <img src="~/Images/logo.png" alt="Logo">
+        </a>
+        <label for="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle" />
+        <ul class="nav">
+            <li><a href="/">Software</a></li>
+            <li><a href="@Url.Action("Index")">Mods</a></li>
+            <li><a href="/">Art</a></li>
+            <li><a href="/">About</a></li>
+        </ul>
+    </header>
 <!-- end header -->
-
-<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-</a>

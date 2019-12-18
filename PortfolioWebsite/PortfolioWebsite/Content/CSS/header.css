@@ -17,13 +17,14 @@
 }
 
 .nav {
-    position: relative;
-    padding-right: 1em;
+    display: none;
+    /*position: relative;
+    padding-right: 1em;*/
 }
 
 .site-logo {
     width: 110px;
-    align-self: center;
+    align-self: left;
     padding-left: 1em;
 }
 
@@ -43,53 +44,23 @@
     text-decoration: none;
 }
 
-    .nav a:hover {
-        color: #c89960;
-    }
-
-/* -------------------------
-    Mobile Navbar
-------------------------- */
-/* Style the navigation menu */
-.main-header {
-    overflow: hidden;
-    background-color: #333;
-    position: relative;
+.nav a:hover {
+    color: #c89960;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.nav {
-    display: none;
-}
-
-/* Style navigation menu links */
-.main-header a {
-    color: white;
-    padding: 14px 16px;
+label {
+    display: block;
+    color: #ffffff;
+    font-size: 1.125em;
+    font-weight: 300;
+    text-align: center;
+    padding: .4em;
+    padding-top: 1em;
     text-decoration: none;
-    font-size: 17px;
-    display: block;
 }
 
-/* Style the hamburger menu */
-.main-header a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-/* Add a grey background color on mouse-over */
-.main-header a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Style the active link (or home/logo) */
-.active {
-    background-color: #4CAF50;
-    color: white;
+#toggle {
+    display: none;
 }
 
 /* -------------------------
@@ -110,6 +81,7 @@
     }
 
     .nav {
+        display: flex;
         margin-top: 0;
         flex-direction: row;
         justify-content: space-between;
@@ -123,5 +95,15 @@
     .nav li {
         margin-left: .65em;
         margin-right: 0.65em;
+    }
+
+    label {
+        margin: 0 40px 0 0;
+        font-size: 26px;
+        line-height: 70px;
+        display: none;
+    }
+    #toggle {
+        display: none;
     }
 }
