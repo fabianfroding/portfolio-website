@@ -29,8 +29,8 @@
 
 .nav {
     display: none;
-    text-align: center;
-    width: 100%;
+    position: relative;
+    padding-right: 1em;
 }
 
 .nav a {
@@ -62,7 +62,7 @@ label {
 #toggle {
     display: none;
 }
-#toggle:checked * .nav {
+#toggle:checked + .nav {
     display: block;
 }
 
@@ -84,13 +84,9 @@ label {
     }
 
     .nav {
-        margin: 0 30px 0 0;
-
         display: flex;
-        margin-top: 0;
         flex-direction: row;
         justify-content: space-between;
-        align-self: center;
     }
 
     .nav a {
@@ -103,10 +99,14 @@ label {
     }
 
     label {
+        display: none;
         margin: 0 40px 0 0;
         font-size: 26px;
         line-height: 70px;
-
-        display: none;
+    }
+    #toggle:checked + .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

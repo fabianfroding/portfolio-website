@@ -7,15 +7,14 @@
 
 <h1>@Model.Title</h1>
 <p>@Model.Description</p>
-<p>Test</p>
 @if (@Model.Images.Length > 0)
 {
-    <ul>
-        @foreach (var image in @Model.Images)
-        {
-            <li>
-                <img src=image>
-            </li>
-        }
-    </ul>
+        <ul>
+            @foreach (var image in @Model.Images)
+            {
+                <li class="detail-image">
+                    <img src="@Url.Content(image)">
+                </li>
+            }
+        </ul>
 }

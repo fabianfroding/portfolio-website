@@ -1,0 +1,5 @@
+﻿.detail-image img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}

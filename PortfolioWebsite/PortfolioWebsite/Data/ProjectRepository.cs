@@ -1,8 +1,5 @@
 ﻿using PortfolioWebsite.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace PortfolioWebsite.Data
 {
@@ -17,9 +14,10 @@ namespace PortfolioWebsite.Data
                 Description = "A mod for Warcraft III",
                 Images = new String[]
                 {
-                    "~/Images/screenshots-vod/1.png",
-                    "~/Images/screenshots-vod/2.png",
-                    "~/Images/screenshots-vod/3.jpg"
+                    "~/Images/temp/vod-1.png",
+                    "~/Images/temp/vod-2.png",
+                    "~/Images/temp/vod-3.jpg",
+                    "~/Images/temp/vod-4.png"
                 }
             },
             new Project()
@@ -29,9 +27,9 @@ namespace PortfolioWebsite.Data
                 Description = "An app to register events in siberia",
                 Images = new String[]
                 {
-                    "~/Images/screenshots-vod/1.png",
-                    "~/Images/screenshots-vod/2.png",
-                    "~/Images/screenshots-vod/3.jpg"
+                    "~/Images/temp/husky-1.jpg",
+                    "~/Images/temp/husky-2.jpg",
+                    "~/Images/temp/husky-3.jpg"
                 }
             },
             new Project()
@@ -41,9 +39,8 @@ namespace PortfolioWebsite.Data
                 Description = "A game in unity",
                 Images = new String[]
                 {
-                    "~/Images/screenshots-vod/1.png",
-                    "~/Images/screenshots-vod/2.png",
-                    "~/Images/screenshots-vod/3.jpg"
+                    "~/Images/temp/wish-1.jpg",
+                    "~/Images/temp/wish-2.jpg"
                 }
             }
         };
