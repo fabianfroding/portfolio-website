@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Add";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.Label("Title", new { @class = "control-label" })
+    @Html.TextBox("Title", null, new { @class = "form-control" })
+    @Html.Label("Description", new { @class = "control-label" })
+    @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
+            
+    <button type="submit">Save</button>
+    <a href="@Url.Action("Index")">Cancel</a>
+}

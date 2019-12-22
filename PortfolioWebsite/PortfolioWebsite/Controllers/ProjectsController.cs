@@ -37,5 +37,10 @@ namespace PortfolioWebsite.Controllers
             var project = _projectRepository.GetProject(id.Value);
             return View(project);
         }
+        public ActionResult Add()
+        {
+            ViewBag.Message = "Add";
+            return View();
+        }
     }
 }
