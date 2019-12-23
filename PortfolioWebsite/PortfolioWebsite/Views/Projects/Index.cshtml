@@ -7,7 +7,7 @@
 
 <!-- start slideshow -->
 <div class="slideshow">
-    <img class="slides" src="~/Images/screenshots-vod/1.png">
+    <img class="slides" src="@Url.Content(Model.ElementAt(0).Images[0])">
     <div class="slideshow-sub">
         @foreach (var project in Model)
         {
@@ -18,12 +18,13 @@
     <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
     <button class="next" onclick="plusDivs(+1)">&#10095;</button>
     <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        @for (var i = 1; i < Model.Length; i++)
+        {
+            <span class="dot" onclick="currentSlide(i)"></span>
+        }
     </div>
 </div>
-
 <!-- end slideshow -->
 
 <button type="submit">@Html.ActionLink("New Project", "Add")</button>
