@@ -18,8 +18,9 @@
 
 .site-logo {
     width: 110px;
-    padding-left: 1em;
-    padding-top: 1em;
+    align-self: center;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
 }
 
 .site-logo img {
@@ -56,8 +57,8 @@ label {
     color: #ffffff;
     margin-bottom: 5px;
     flex-direction: row;
-    margin-left: auto;
     padding-right: 1em;
+    align-self: center;
 }
 #toggle {
     display: none;
@@ -81,6 +82,8 @@ label {
     .site-logo {
         width: 140px;
         margin-right: auto;
+        padding-left: 1em;
+        padding-top: 0;
     }
 
     .nav {
