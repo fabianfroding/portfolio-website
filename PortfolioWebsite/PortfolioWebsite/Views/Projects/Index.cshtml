@@ -11,7 +11,7 @@
     <div class="slideshow-sub">
         @foreach (var project in Model)
         {
-            <img class="slides fade" src="@Url.Content(project.Images[0])">    
+            <img class="slides fade" src="@Url.Content(project.Images[0])">
         }
     </div>
 
@@ -23,7 +23,10 @@
         <span class="dot" onclick="currentSlide(2)"></span>
     </div>
 </div>
+
 <!-- end slideshow -->
+
+<button type="submit">@Html.ActionLink("New Project", "Add")</button>
 
 @foreach (var project in Model)
 {

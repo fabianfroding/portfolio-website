@@ -25,6 +25,14 @@ a:link, :visited {
     color: #ffffff;
 }
 
+button {
+    color: #14171c;
+}
+
+button :visited {
+    color: #14171c;
+}
+
 /* -------------------------
     Media Queries
 ------------------------- */

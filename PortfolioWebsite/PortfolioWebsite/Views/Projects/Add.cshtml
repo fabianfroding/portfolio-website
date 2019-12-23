@@ -1,15 +1,18 @@
 ﻿@{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "New Project";
 }
 
-<h2>@ViewBag.Title</h2>
+<h1>@ViewBag.Title</h1>
 
-@using (Html.BeginForm()) {
-    @Html.Label("Title", new { @class = "control-label" })
-    @Html.TextBox("Title", null, new { @class = "form-control" })
+@using (Html.BeginForm())
+{
+    @Html.Label("Project Title", new { @class = "control-label" })
+    <p>Project Title</p>
+    @Html.TextBox("Project Title", null, new { @class = "form-control" })
     @Html.Label("Description", new { @class = "control-label" })
+    <p>Description</p>
     @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
-            
+
     <button type="submit">Save</button>
     <a href="@Url.Action("Index")">Cancel</a>
 }
