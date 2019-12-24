@@ -7,21 +7,21 @@
 
 <!-- start slideshow -->
 <div class="slideshow">
-    <img class="slides" src="@Url.Content(Model.ElementAt(0).Images[0])">
-    <div class="slideshow-sub">
-        @foreach (var project in Model)
+    <img class="mySlides" src="@Url.Content(Model.ElementAt(0).Images[0])">
+    <div class="slide-show-sub">
+        @for (var i = 1; i < Model.Length; i++)
         {
-            <img class="slides fade" src="@Url.Content(project.Images[0])">
+            <img class="mySlides fade" src="@Url.Content(Model.ElementAt(i).Images[0])">
         }
     </div>
 
     <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
     <button class="next" onclick="plusDivs(+1)">&#10095;</button>
     <div style="text-align:center">
-        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot active" onclick="currentSlide(1)"></span>
         @for (var i = 1; i < Model.Length; i++)
         {
-            <span class="dot" onclick="currentSlide(i)"></span>
+            <span class="dot" onclick="currentSlide(i + 1)"></span>
         }
     </div>
 </div>
