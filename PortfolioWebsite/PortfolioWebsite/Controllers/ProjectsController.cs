@@ -37,9 +37,24 @@ namespace PortfolioWebsite.Controllers
             var project = _projectRepository.GetProject(id.Value);
             return View(project);
         }
+        public ActionResult Details(int id)
+        {
+            ProjectContext projectContext = new ProjectContext();
+            Project project = projectContext.Projects.Single(pro => pro.Id == id);
+            return View(project);
+        }
         public ActionResult Add()
         {
             ViewBag.Message = "Add";
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(Project project)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }
