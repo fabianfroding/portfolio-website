@@ -6,7 +6,6 @@ using System.Web;
 
 namespace PortfolioWebsite.Models
 {
-    [Table("tblProject")]
     public class Project
     {
         public int Id { get; set; }

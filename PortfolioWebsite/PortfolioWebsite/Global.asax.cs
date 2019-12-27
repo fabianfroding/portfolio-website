@@ -13,7 +13,6 @@ namespace PortfolioWebsite
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<PortfolioWebsite.Models.ProjectContext>(null);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

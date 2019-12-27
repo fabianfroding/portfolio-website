@@ -7,7 +7,7 @@ using System.Web;
 
 namespace PortfolioWebsite.Data
 {
-    public class ProjectContext: DbContext
+    public class ProjectContext : DbContext
     {
         public DbSet<Project> Projects { get; set; }
     }
