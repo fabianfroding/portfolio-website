@@ -1,0 +1,5 @@
+﻿//========== How to update database ==========//
+
+1. enable-migrations (only once)
+2. add-migration <brief description of change> -force (to overwrite)
+3. update-database

@@ -113,6 +113,7 @@
     <Content Include="Images\screenshots-vod\6.jpg" />
     <Content Include="Images\screenshots-vod\7.jpg" />
     <Content Include="Images\screenshots-vod\8.jpg" />
+    <Content Include="notes.txt" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -132,6 +133,10 @@
     <Compile Include="Migrations\201912261838300_CreateProject.cs" />
     <Compile Include="Migrations\201912261838300_CreateProject.designer.cs">
       <DependentUpon>201912261838300_CreateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912281147543_PopulateProjects.cs" />
+    <Compile Include="Migrations\201912281147543_PopulateProjects.designer.cs">
+      <DependentUpon>201912281147543_PopulateProjects.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Project.cs" />
@@ -162,6 +167,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912261838300_CreateProject.resx">
       <DependentUpon>201912261838300_CreateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912281147543_PopulateProjects.resx">
+      <DependentUpon>201912281147543_PopulateProjects.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
