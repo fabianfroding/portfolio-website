@@ -7,11 +7,17 @@
 
 <!-- start slideshow -->
 <div class="slideshow">
-    <img class="mySlides" src="@Url.Content(Model.ElementAt(0).Images[0])">
+    @if (Model.ElementAt(0).Images?[0] != null)
+    {
+    <img class="mySlides" src="@Url.Content(Model.ElementAt(0).Images?[0])">
+    }
     <div class="slide-show-sub">
         @for (var i = 1; i < Model.Length; i++)
         {
-            <img class="mySlides fade" src="@Url.Content(Model.ElementAt(i).Images[0])">
+            if (Model.ElementAt(0).Images?[0] != null)
+            {
+                <img class="mySlides fade" src="@Url.Content(Model.ElementAt(i).Images?[0])">
+            }
         }
     </div>
 

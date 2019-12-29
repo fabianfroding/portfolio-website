@@ -18,14 +18,21 @@ namespace PortfolioWebsite.Controllers
 {
     public class ProjectsController : Controller
     {
+        private ProjectContext _projectContext;
         private ProjectRepository _projectRepository = null;
         public ProjectsController()
         {
             _projectRepository = new ProjectRepository();
+            _projectContext = new ProjectContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _projectContext.Dispose();
         }
         public ActionResult Index()
         {
-            var projects = _projectRepository.GetProjects();
+            //var projects = _projectRepository.GetProjects();
+            var projects = _projectContext.Projects.ToArray<Project>();
             return View(projects);
         }
         public ActionResult Detail(int? id)
@@ -34,13 +41,8 @@ namespace PortfolioWebsite.Controllers
             {
                 return HttpNotFound();
             }
-            var project = _projectRepository.GetProject(id.Value);
-            return View(project);
-        }
-        public ActionResult Details(int id)
-        {
-            ProjectContext projectContext = new ProjectContext();
-            Project project = projectContext.Projects.Single(pro => pro.Id == id);
+            //var project = _projectRepository.GetProject(id.Value);
+            var project = _projectContext.Projects.SingleOrDefault(c => c.Id == id);
             return View(project);
         }
         public ActionResult Add()

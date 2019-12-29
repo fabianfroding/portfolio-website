@@ -138,6 +138,10 @@
     <Compile Include="Migrations\201912281147543_PopulateProjects.designer.cs">
       <DependentUpon>201912281147543_PopulateProjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.cs" />
+    <Compile Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.designer.cs">
+      <DependentUpon>201912290935355_ApplyAnnotationToProjectTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectContext.cs" />
@@ -170,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912281147543_PopulateProjects.resx">
       <DependentUpon>201912281147543_PopulateProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.resx">
+      <DependentUpon>201912290935355_ApplyAnnotationToProjectTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
