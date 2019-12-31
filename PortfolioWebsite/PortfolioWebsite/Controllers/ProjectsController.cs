@@ -31,8 +31,8 @@ namespace PortfolioWebsite.Controllers
         }
         public ActionResult Index()
         {
-            //var projects = _projectRepository.GetProjects();
-            var projects = _projectContext.Projects.ToArray<Project>();
+            var projects = _projectRepository.GetProjects();
+            //var projects = _projectContext.Projects.ToArray<Project>();
             return View(projects);
         }
         public ActionResult Detail(int? id)
@@ -41,8 +41,8 @@ namespace PortfolioWebsite.Controllers
             {
                 return HttpNotFound();
             }
-            //var project = _projectRepository.GetProject(id.Value);
-            var project = _projectContext.Projects.SingleOrDefault(c => c.Id == id);
+            var project = _projectRepository.GetProject(id.Value);
+            //var project = _projectContext.Projects.SingleOrDefault(c => c.Id == id);
             return View(project);
         }
         public ActionResult Add()
