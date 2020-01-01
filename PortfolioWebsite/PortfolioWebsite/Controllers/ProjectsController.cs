@@ -45,6 +45,7 @@ namespace PortfolioWebsite.Controllers
             //var project = _projectContext.Projects.SingleOrDefault(c => c.Id == id);
             return View(project);
         }
+        [HttpGet]
         public ActionResult Add()
         {
             ViewBag.Message = "Add";

@@ -1,18 +1,30 @@
-﻿@{
+﻿@model PortfolioWebsite.Models.Project
+
+@{
     ViewBag.Title = "New Project";
 }
 
 <h1>@ViewBag.Title</h1>
 
-@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
+
     @Html.Label("Project Title", new { @class = "control-label" })
     <p>Project Title</p>
     @Html.TextBox("Project Title", null, new { @class = "form-control" })
+
     @Html.Label("Description", new { @class = "control-label" })
     <p>Description</p>
     @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
+
     <p>Cover Image</p>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.LabelFor(model => model.Images[0], new { @class = "control-label" })
+    @Html.EditorFor(model => model.Images[0], new { @class = "control-label" })
+    @Html.ValidationMessageFor(model => model.Images[0], "", new { @class = "text-danger" })
+
     <input type="file" name="postedFile" />
 
     <button type="submit">Save</button>
