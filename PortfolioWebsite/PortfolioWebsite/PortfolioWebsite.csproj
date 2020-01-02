@@ -105,16 +105,19 @@
     <Content Include="Content\CSS\index-list.css" />
     <Content Include="Content\CSS\slideshow.css" />
     <Content Include="Global.asax" />
-    <Content Include="Images\screenshots-vod\1.png" />
-    <Content Include="Images\screenshots-vod\2.png" />
-    <Content Include="Images\screenshots-vod\3.jpg" />
-    <Content Include="Images\screenshots-vod\4.png" />
-    <Content Include="Images\screenshots-vod\5.png" />
-    <Content Include="Images\screenshots-vod\6.jpg" />
-    <Content Include="Images\screenshots-vod\7.jpg" />
-    <Content Include="Images\screenshots-vod\8.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\temp\husky-1.jpg" />
+    <Content Include="Images\temp\husky-2.jpg" />
+    <Content Include="Images\temp\husky-3.jpg" />
+    <Content Include="Images\temp\vod-1.png" />
+    <Content Include="Images\temp\vod-2.png" />
+    <Content Include="Images\temp\vod-3.jpg" />
+    <Content Include="Images\temp\vod-4.png" />
+    <Content Include="Images\temp\wish-1.jpg" />
+    <Content Include="Images\temp\wish-2.jpg" />
     <Content Include="notes.txt" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Images\logo.psd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -142,6 +145,10 @@
     <Compile Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.cs" />
     <Compile Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.designer.cs">
       <DependentUpon>201912290935355_ApplyAnnotationToProjectTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001021023357_ModifyProjectModel.cs" />
+    <Compile Include="Migrations\202001021023357_ModifyProjectModel.designer.cs">
+      <DependentUpon>202001021023357_ModifyProjectModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Project.cs" />
@@ -178,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.resx">
       <DependentUpon>201912290935355_ApplyAnnotationToProjectTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001021023357_ModifyProjectModel.resx">
+      <DependentUpon>202001021023357_ModifyProjectModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

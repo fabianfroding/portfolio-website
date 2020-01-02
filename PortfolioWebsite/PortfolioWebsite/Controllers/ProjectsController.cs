@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 /* Action Result return types:
  * View(model);
@@ -58,6 +59,20 @@ namespace PortfolioWebsite.Controllers
             {
                 return RedirectToAction("Index");
             }
+            string fileName = Path.GetFileNameWithoutExtension(project.CoverImageFile.FileName);
+            string extension = Path.GetExtension(project.CoverImageFile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            project.Images[0] = "~/Images/" + fileName;
+            fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
+            project.CoverImageFile.SaveAs(fileName);
+
+            // DB stuff. Move to data access class? Separation of concerns...
+            using (ProjectContext db = new ProjectContext())
+            {
+                db.Projects.Add(project);
+                db.SaveChanges();
+            }
+            ModelState.Clear();
             return View();
         }
     }
