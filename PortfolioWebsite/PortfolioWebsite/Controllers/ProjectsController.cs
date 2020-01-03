@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using System.Data.Entity.Validation;
 
 /* Action Result return types:
  * View(model);
@@ -55,16 +56,20 @@ namespace PortfolioWebsite.Controllers
         [HttpPost]
         public ActionResult Add(Project project)
         {
+            project = new Project();
+            project.Title = "TestTitle";
+            project.Id = 123;
+            project.Description = "TestDescript";
             if (ModelState.IsValid)
             {
                 return RedirectToAction("Index");
             }
-            string fileName = Path.GetFileNameWithoutExtension(project.CoverImageFile.FileName);
+            /*string fileName = Path.GetFileNameWithoutExtension(project.CoverImageFile.FileName);
             string extension = Path.GetExtension(project.CoverImageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
             project.Images[0] = "~/Images/" + fileName;
             fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
-            project.CoverImageFile.SaveAs(fileName);
+            project.CoverImageFile.SaveAs(fileName);*/
 
             // DB stuff. Move to data access class? Separation of concerns...
             using (ProjectContext db = new ProjectContext())
