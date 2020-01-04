@@ -7,6 +7,7 @@
     {
         public override void Up()
         {
+            AddColumn("dbo.Projects", "Images", c => c.String());
         }
         
         public override void Down()

@@ -98,9 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CSS\base.css" />
-    <Content Include="Content\CSS\content.css" />
     <Content Include="Content\CSS\detail.css" />
-    <Content Include="Content\CSS\dropdown.css" />
     <Content Include="Content\CSS\header.css" />
     <Content Include="Content\CSS\index-list.css" />
     <Content Include="Content\CSS\slideshow.css" />
