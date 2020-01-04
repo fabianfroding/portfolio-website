@@ -14,7 +14,7 @@
                     Id = c.Int(nullable: false, identity: true),
                     Title = c.String(),
                     Description = c.String(),
-                    //Images = c.String(),
+                    Images = c.String(),
                 })
                 .PrimaryKey(t => t.Id);
         }

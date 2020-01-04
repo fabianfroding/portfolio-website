@@ -56,14 +56,6 @@ namespace PortfolioWebsite.Controllers
         [HttpPost]
         public ActionResult Add(Project project)
         {
-            project = new Project();
-            project.Title = "TestTitle";
-            project.Id = 123;
-            project.Description = "TestDescript";
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("Index");
-            }
             /*string fileName = Path.GetFileNameWithoutExtension(project.CoverImageFile.FileName);
             string extension = Path.GetExtension(project.CoverImageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
@@ -76,6 +68,10 @@ namespace PortfolioWebsite.Controllers
             {
                 db.Projects.Add(project);
                 db.SaveChanges();
+            }
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
             }
             ModelState.Clear();
             return View();

@@ -11,12 +11,15 @@ namespace PortfolioWebsite.Models
     public class Project
     {
         public int Id { get; set; }
+        [DisplayName("Title")]
         [Required]
         [StringLength(30)]
         public string Title { get; set; }
+        [DisplayName("Description")]
         public string Description { get; set; }
-        [DisplayName("Upload file")]
+        [DisplayName("Images")]
         public string[] Images { get; set; }
+        [DisplayName("Cover Image File")]
         [NotMapped]
         public HttpPostedFileBase CoverImageFile { get; set; }
     }
