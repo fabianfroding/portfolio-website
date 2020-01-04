@@ -126,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="BusinessLogic\ProjectProcessor.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Data\ProjectRepository.cs" />
     <Compile Include="Global.asax.cs">
