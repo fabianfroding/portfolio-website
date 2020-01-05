@@ -131,21 +131,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912261838300_CreateProject.cs" />
-    <Compile Include="Migrations\201912261838300_CreateProject.designer.cs">
-      <DependentUpon>201912261838300_CreateProject.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912281147543_PopulateProjects.cs" />
-    <Compile Include="Migrations\201912281147543_PopulateProjects.designer.cs">
-      <DependentUpon>201912281147543_PopulateProjects.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.cs" />
-    <Compile Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.designer.cs">
-      <DependentUpon>201912290935355_ApplyAnnotationToProjectTitle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001041044213_AddedImagesPropertyToProjectModel.cs" />
-    <Compile Include="Migrations\202001041044213_AddedImagesPropertyToProjectModel.designer.cs">
-      <DependentUpon>202001041044213_AddedImagesPropertyToProjectModel.cs</DependentUpon>
+    <Compile Include="Migrations\202001050936490_InitialModel.cs" />
+    <Compile Include="Migrations\202001050936490_InitialModel.designer.cs">
+      <DependentUpon>202001050936490_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Project.cs" />
@@ -174,17 +162,8 @@
     <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912261838300_CreateProject.resx">
-      <DependentUpon>201912261838300_CreateProject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912281147543_PopulateProjects.resx">
-      <DependentUpon>201912281147543_PopulateProjects.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912290935355_ApplyAnnotationToProjectTitle.resx">
-      <DependentUpon>201912290935355_ApplyAnnotationToProjectTitle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001041044213_AddedImagesPropertyToProjectModel.resx">
-      <DependentUpon>202001041044213_AddedImagesPropertyToProjectModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001050936490_InitialModel.resx">
+      <DependentUpon>202001050936490_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

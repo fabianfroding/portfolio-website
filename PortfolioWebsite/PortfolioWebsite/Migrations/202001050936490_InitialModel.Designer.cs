@@ -7,13 +7,13 @@ namespace PortfolioWebsite.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class AddedImagesPropertyToProjectModel : IMigrationMetadata
+    public sealed partial class InitialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedImagesPropertyToProjectModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001041044213_AddedImagesPropertyToProjectModel"; }
+            get { return "202001050936490_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

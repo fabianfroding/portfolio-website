@@ -54,14 +54,15 @@ namespace PortfolioWebsite.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Add(Project project)
+        public ActionResult Add(Project project, HttpPostedFileBase file)
         {
-            /*string fileName = Path.GetFileNameWithoutExtension(project.CoverImageFile.FileName);
+            string fileName = Path.GetFileNameWithoutExtension(project.CoverImageFile.FileName);
             string extension = Path.GetExtension(project.CoverImageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
             project.Images[0] = "~/Images/" + fileName;
             fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
-            project.CoverImageFile.SaveAs(fileName);*/
+            //System.Diagnostics.Debug.WriteLine("Filename(Combined): " + fileName);
+            project.CoverImageFile.SaveAs(fileName);
 
             // DB stuff. Move to data access class? Separation of concerns...
             using (ProjectContext db = new ProjectContext())
