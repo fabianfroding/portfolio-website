@@ -127,6 +127,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Dao\IProjectDao.cs" />
+    <Compile Include="Dao\ProjectDao.cs" />
     <Compile Include="Data\ProjectRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
