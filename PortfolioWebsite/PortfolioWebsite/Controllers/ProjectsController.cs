@@ -22,21 +22,25 @@ namespace PortfolioWebsite.Controllers
     {
         private ProjectContext _projectContext;
         private ProjectRepository _projectRepository = null;
+
         public ProjectsController()
         {
             _projectRepository = new ProjectRepository();
             _projectContext = new ProjectContext();
         }
+
         protected override void Dispose(bool disposing)
         {
             _projectContext.Dispose();
         }
+
         public ActionResult Index()
         {
             var projects = _projectRepository.GetProjects();
             //var projects = _projectContext.Projects.ToArray<Project>();
             return View(projects);
         }
+
         public ActionResult Detail(int? id)
         {
             if (id == null)
@@ -47,22 +51,23 @@ namespace PortfolioWebsite.Controllers
             //var project = _projectContext.Projects.SingleOrDefault(c => c.Id == id);
             return View(project);
         }
+
         [HttpGet]
         public ActionResult Add()
         {
             ViewBag.Message = "Add";
             return View();
         }
+
         [HttpPost]
-        public ActionResult Add(Project project, HttpPostedFileBase file)
+        public ActionResult Add(Project project)
         {
-            string fileName = Path.GetFileNameWithoutExtension(project.CoverImageFile.FileName);
-            string extension = Path.GetExtension(project.CoverImageFile.FileName);
+            string fileName = Path.GetFileNameWithoutExtension(project.ImageFile.FileName);
+            string extension = Path.GetExtension(project.ImageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            project.Images[0] = "~/Images/" + fileName;
+            project.ImagePath = "~/Images/" + fileName;
             fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
-            //System.Diagnostics.Debug.WriteLine("Filename(Combined): " + fileName);
-            project.CoverImageFile.SaveAs(fileName);
+            project.ImageFile.SaveAs(fileName);
 
             // DB stuff. Move to data access class? Separation of concerns...
             using (ProjectContext db = new ProjectContext())

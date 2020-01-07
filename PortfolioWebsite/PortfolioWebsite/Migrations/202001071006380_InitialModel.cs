@@ -14,7 +14,7 @@
                         Id = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false, maxLength: 30),
                         Description = c.String(),
-                        Images = c.String(nullable: false),
+                        ImagePath = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
