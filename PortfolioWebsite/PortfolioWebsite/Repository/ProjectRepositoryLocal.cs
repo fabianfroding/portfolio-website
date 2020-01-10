@@ -3,7 +3,8 @@ using System;
 
 namespace PortfolioWebsite.Data
 {
-    public class ProjectRepository
+    // Move this stuff to db initializer when implemented.
+    public class ProjectRepositoryLocal
     {
         private static Project[] _projects = new Project[]
         {

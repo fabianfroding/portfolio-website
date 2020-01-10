@@ -1,8 +1,8 @@
-﻿using PortfolioWebsite.Data;
-using PortfolioWebsite.Models;
+﻿using PortfolioWebsite.Models;
 using System;
 using System.Web.Mvc;
 using System.IO;
+using PortfolioWebsite.Repository;
 
 /* Action Result return types:
  * View(model);
@@ -16,25 +16,16 @@ namespace PortfolioWebsite.Controllers
 {
     public class ProjectsController : Controller
     {
-        private ProjectContext _projectContext;
-        private ProjectRepository _projectRepository = null;
+        private ProjectRepository _projectRepository;
 
         public ProjectsController()
         {
             _projectRepository = new ProjectRepository();
-            _projectContext = new ProjectContext();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            _projectContext.Dispose();
         }
 
         public ActionResult Index()
         {
-            var projects = _projectRepository.GetProjects();
-            //var projects = _projectContext.Projects.ToArray<Project>();
-            return View(projects);
+            return View(_projectRepository.GetAll().ToArray());
         }
 
         public ActionResult Detail(int? id)
@@ -43,9 +34,7 @@ namespace PortfolioWebsite.Controllers
             {
                 return HttpNotFound();
             }
-            var project = _projectRepository.GetProject(id.Value);
-            //var project = _projectContext.Projects.SingleOrDefault(c => c.Id == id);
-            return View(project);
+            return View(_projectRepository.GetById(id.Value));
         }
 
         [HttpGet]
@@ -58,6 +47,7 @@ namespace PortfolioWebsite.Controllers
         [HttpPost]
         public ActionResult Add(Project project)
         {
+            // Move this stuff to somewhere more appropriate.
             string fileName = Path.GetFileNameWithoutExtension(project.ImageFile.FileName);
             string extension = Path.GetExtension(project.ImageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
@@ -65,12 +55,8 @@ namespace PortfolioWebsite.Controllers
             fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
             project.ImageFile.SaveAs(fileName);
 
-            // DB stuff. Move to data access class? Separation of concerns...
-            using (ProjectContext db = new ProjectContext())
-            {
-                db.Projects.Add(project);
-                db.SaveChanges();
-            }
+            _projectRepository.Add(project);
+
             if (ModelState.IsValid)
             {
                 return RedirectToAction("Index");
