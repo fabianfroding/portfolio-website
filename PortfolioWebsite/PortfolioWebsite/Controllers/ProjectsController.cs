@@ -2,7 +2,7 @@
 using System;
 using System.Web.Mvc;
 using System.IO;
-using PortfolioWebsite.Repository;
+using PortfolioWebsite.Service;
 
 /* Action Result return types:
  * View(model);
@@ -16,16 +16,16 @@ namespace PortfolioWebsite.Controllers
 {
     public class ProjectsController : Controller
     {
-        private ProjectRepository _projectRepository;
+        private ProjectService _projectService;
 
         public ProjectsController()
         {
-            _projectRepository = new ProjectRepository();
+            _projectService = new ProjectService();
         }
 
         public ActionResult Index()
         {
-            return View(_projectRepository.GetAll().ToArray());
+            return View(_projectService.GetAll().ToArray());
         }
 
         public ActionResult Detail(int? id)
@@ -34,7 +34,7 @@ namespace PortfolioWebsite.Controllers
             {
                 return HttpNotFound();
             }
-            return View(_projectRepository.GetById(id.Value));
+            return View(_projectService.GetById(id.Value));
         }
 
         [HttpGet]
@@ -55,7 +55,7 @@ namespace PortfolioWebsite.Controllers
             fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
             project.ImageFile.SaveAs(fileName);
 
-            _projectRepository.Add(project);
+            _projectService.Add(project);
 
             if (ModelState.IsValid)
             {
