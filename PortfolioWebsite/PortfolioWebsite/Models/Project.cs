@@ -20,8 +20,6 @@ namespace PortfolioWebsite.Models
         [DisplayName("Images")]
         public string[] Images { get; set; }
 
-        public byte[] ImageBytes { get; set; }
-
         //========== Test ==========//
         public string ImagePath { get; set; }
 

@@ -1,7 +1,5 @@
 ﻿using PortfolioWebsite.Models;
-using System;
 using System.Web.Mvc;
-using System.IO;
 using PortfolioWebsite.Services;
 
 /* Action Result return types:
@@ -47,15 +45,7 @@ namespace PortfolioWebsite.Controllers
         [HttpPost]
         public ActionResult Add(Project project)
         {
-            // Move this stuff to somewhere more appropriate.
-            string fileName = Path.GetFileNameWithoutExtension(project.ImageFile.FileName);
-            string extension = Path.GetExtension(project.ImageFile.FileName);
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            project.ImagePath = "~/Images/" + fileName;
-            fileName = Path.Combine(Server.MapPath("~/Images/"), fileName);
-            project.ImageFile.SaveAs(fileName);
-
-            _projectService.Add(project);
+            _projectService.Add(project, Server.MapPath("~/Images/"));
 
             if (ModelState.IsValid)
             {

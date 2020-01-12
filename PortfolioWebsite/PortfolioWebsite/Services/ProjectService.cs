@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using PortfolioWebsite.Models;
 using PortfolioWebsite.Repositories;
 
@@ -23,8 +25,16 @@ namespace PortfolioWebsite.Services
             return _projectRepository.GetAll();
         }
 
-        public void Add(Project project)
+        public void Add(Project project, string serverMapPath)
         {
+            string fileName = 
+                Path.GetFileNameWithoutExtension(project.ImageFile.FileName) +
+                DateTime.Now.ToString("yymmssfff") +
+                Path.GetExtension(project.ImageFile.FileName);
+            project.ImagePath = "~/Images/" + fileName;
+            fileName = Path.Combine(serverMapPath, fileName);
+            project.ImageFile.SaveAs(fileName);
+
             _projectRepository.Add(project);
         }
 

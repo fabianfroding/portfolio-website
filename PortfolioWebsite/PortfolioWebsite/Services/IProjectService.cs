@@ -7,7 +7,7 @@ namespace PortfolioWebsite.Services
     {
         Project GetById(int id);
         List<Project> GetAll();
-        void Add(Project project);
+        void Add(Project project, string serverMapPath);
         void Remove(Project project);
     }
 }
