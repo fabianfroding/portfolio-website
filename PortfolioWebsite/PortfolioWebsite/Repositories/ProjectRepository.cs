@@ -4,7 +4,7 @@ using System.Linq;
 using PortfolioWebsite.Data;
 using PortfolioWebsite.Models;
 
-namespace PortfolioWebsite.Repository
+namespace PortfolioWebsite.Repositories
 {
     public class ProjectRepository : IProjectRepository, IDisposable
     {

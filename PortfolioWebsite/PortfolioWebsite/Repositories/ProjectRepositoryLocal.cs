@@ -1,7 +1,7 @@
 ﻿using PortfolioWebsite.Models;
 using System;
 
-namespace PortfolioWebsite.Data
+namespace PortfolioWebsite.Repositories
 {
     // Move this stuff to db initializer when implemented.
     public class ProjectRepositoryLocal

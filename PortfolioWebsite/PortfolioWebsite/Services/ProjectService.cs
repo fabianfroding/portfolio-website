@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using PortfolioWebsite.Models;
-using PortfolioWebsite.Repository;
+using PortfolioWebsite.Repositories;
 
-namespace PortfolioWebsite.Service
+namespace PortfolioWebsite.Services
 {
     public class ProjectService : IProjectService
     {

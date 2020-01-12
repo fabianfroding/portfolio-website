@@ -1,9 +1,9 @@
 ﻿using PortfolioWebsite.Models;
 using System.Collections.Generic;
 
-namespace PortfolioWebsite.Repository
+namespace PortfolioWebsite.Services
 {
-    public interface IProjectRepository
+    public interface IProjectService
     {
         Project GetById(int id);
         List<Project> GetAll();
