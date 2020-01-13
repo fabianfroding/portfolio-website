@@ -17,6 +17,7 @@ namespace PortfolioWebsite.Services
 
         public Project GetById(int id)
         {
+            System.Diagnostics.Debug.WriteLine("Service GetById: " + _projectRepository.GetById(id).Images.Count.ToString());
             return _projectRepository.GetById(id);
         }
 

@@ -32,6 +32,7 @@ namespace PortfolioWebsite.Controllers
             {
                 return HttpNotFound();
             }
+            System.Diagnostics.Debug.WriteLine("Detail: " + _projectService.GetById(id.Value).Images.Count.ToString());
             return View(_projectService.GetById(id.Value));
         }
 

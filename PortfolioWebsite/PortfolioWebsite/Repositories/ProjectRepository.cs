@@ -19,6 +19,7 @@ namespace PortfolioWebsite.Repositories
 
         public Project GetById(int id)
         {
+            System.Diagnostics.Debug.WriteLine("Repository GetById: " + _projectRepositoryLocal.GetProject(id).Images.Count.ToString());
             return _projectRepositoryLocal.GetProject(id);
             //var project = _projectContext.Projects.SingleOrDefault(c => c.Id == id);
         }

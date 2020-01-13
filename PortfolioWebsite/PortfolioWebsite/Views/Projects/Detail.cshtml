@@ -7,7 +7,7 @@
 
 <h1>@Model.Title</h1>
 <p>@Model.Description</p>
-@if (@Model.Images.Length > 0)
+@if (@Model.Images.Count > 0)
 {
         <ul>
             @foreach (var image in @Model.Images)
