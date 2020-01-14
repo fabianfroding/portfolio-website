@@ -17,7 +17,6 @@ namespace PortfolioWebsite.Services
 
         public Project GetById(int id)
         {
-            System.Diagnostics.Debug.WriteLine("Service GetById: " + _projectRepository.GetById(id).Images.Count.ToString());
             return _projectRepository.GetById(id);
         }
 
@@ -32,6 +31,10 @@ namespace PortfolioWebsite.Services
                 Path.GetFileNameWithoutExtension(project.ImageFile.FileName) +
                 DateTime.Now.ToString("yymmssfff") +
                 Path.GetExtension(project.ImageFile.FileName);
+            // Remove commas from the filename
+            // Commas are used as separators in the Project Images list.
+            // Read more in Project class.
+            fileName = fileName.Replace(",", "");
             project.ImagePath = "~/Images/" + fileName;
             fileName = Path.Combine(serverMapPath, fileName);
             project.ImageFile.SaveAs(fileName);
