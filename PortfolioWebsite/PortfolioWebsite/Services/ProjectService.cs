@@ -17,12 +17,19 @@ namespace PortfolioWebsite.Services
 
         public Project GetById(int id)
         {
-            return _projectRepository.GetById(id);
+            Project project = _projectRepository.GetById(id);
+            project.ImagesAsString = project.ImagesAsString;
+            return project;
         }
 
         public List<Project> GetAll()
         {
-            return _projectRepository.GetAll();
+            List<Project> projects = _projectRepository.GetAll();
+            foreach (var project in projects)
+            {
+                project.ImagesAsString = project.ImagesAsString;
+            }
+            return projects;
         }
 
         public void Add(Project project, string serverMapPath)

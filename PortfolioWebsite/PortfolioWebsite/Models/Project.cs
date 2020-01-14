@@ -30,7 +30,7 @@ namespace PortfolioWebsite.Models
 
         public string ImagesAsString {
             get { return string.Join(",", Images); }
-            set { value.Split(',').ToList(); } 
+            set { Images = value.Split(',').ToList(); } 
         }
 
         [NotMapped]

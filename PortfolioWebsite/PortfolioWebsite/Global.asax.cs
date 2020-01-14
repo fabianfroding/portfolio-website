@@ -10,7 +10,7 @@ namespace PortfolioWebsite
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            // Add database initializer
+            // Add database initialization if it should be seeded on app startup?
         }
     }
 }

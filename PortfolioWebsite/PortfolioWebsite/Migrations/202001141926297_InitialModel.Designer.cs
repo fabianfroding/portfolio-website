@@ -13,7 +13,7 @@ namespace PortfolioWebsite.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202001141813373_InitialModel"; }
+            get { return "202001141926297_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

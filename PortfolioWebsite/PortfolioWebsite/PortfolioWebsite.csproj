@@ -130,9 +130,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001141813373_InitialModel.cs" />
-    <Compile Include="Migrations\202001141813373_InitialModel.designer.cs">
-      <DependentUpon>202001141813373_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202001141926297_InitialModel.cs" />
+    <Compile Include="Migrations\202001141926297_InitialModel.designer.cs">
+      <DependentUpon>202001141926297_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Project.cs" />
@@ -165,8 +165,8 @@
     <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001141813373_InitialModel.resx">
-      <DependentUpon>202001141813373_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001141926297_InitialModel.resx">
+      <DependentUpon>202001141926297_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
