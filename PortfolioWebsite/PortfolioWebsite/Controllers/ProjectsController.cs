@@ -32,7 +32,8 @@ namespace PortfolioWebsite.Controllers
             {
                 return HttpNotFound();
             }
-            System.Diagnostics.Debug.WriteLine("Images2String: " + _projectService.GetById(id.Value).ImagesToString());
+            System.Diagnostics.Debug.WriteLine("ImagesAsString: " + _projectService.GetById(id.Value).ImagesAsString);
+
             return View(_projectService.GetById(id.Value));
         }
 
