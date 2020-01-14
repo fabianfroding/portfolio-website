@@ -31,9 +31,8 @@ namespace PortfolioWebsite.Services
                 Path.GetFileNameWithoutExtension(project.ImageFile.FileName) +
                 DateTime.Now.ToString("yymmssfff") +
                 Path.GetExtension(project.ImageFile.FileName);
-            // Remove commas from the filename
-            // Commas are used as separators in the Project Images list.
-            // Read more in Project class.
+            // Remove commas from the filename to prevent problems with
+            // comma-separation which is used in the Project class.
             fileName = fileName.Replace(",", "");
             project.Images.Add("~/Images/" + fileName);
             fileName = Path.Combine(serverMapPath, fileName);

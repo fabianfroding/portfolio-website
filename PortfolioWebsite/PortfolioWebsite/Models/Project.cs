@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Web;
 
 namespace PortfolioWebsite.Models
@@ -28,29 +29,8 @@ namespace PortfolioWebsite.Models
         public List<string> Images { get; set; }
 
         public string ImagesAsString {
-            // Returns a string of all image filenames combined
-            // and adds a comma between each. For database storage.
-            get
-            {
-                string result = "";
-                foreach (var image in Images)
-                {
-                    // Only add comma if current item is not the last item in the list.
-                    // To prevent a comme at the end of the combined string.
-                    if (Images.IndexOf(image) == Images.Count - 1)
-                    {
-                        result += image;
-                    }
-                    else
-                    {
-                        result += image + ",";
-                    }
-                }
-                return result;
-            }
-
-            // TODO: StringToImages
-            set { ImagesAsString = value; } 
+            get { return string.Join(",", Images); }
+            set { value.Split(',').ToList(); } 
         }
 
         [NotMapped]
