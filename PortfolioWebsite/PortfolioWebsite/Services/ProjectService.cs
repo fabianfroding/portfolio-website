@@ -35,7 +35,7 @@ namespace PortfolioWebsite.Services
             // Commas are used as separators in the Project Images list.
             // Read more in Project class.
             fileName = fileName.Replace(",", "");
-            project.ImagePath = "~/Images/" + fileName;
+            project.Images.Add("~/Images/" + fileName);
             fileName = Path.Combine(serverMapPath, fileName);
             project.ImageFile.SaveAs(fileName);
 

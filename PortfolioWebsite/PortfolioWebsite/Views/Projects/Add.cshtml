@@ -18,9 +18,9 @@
     <p>Description</p>
     @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
 
-    <p>Cover Image</p>
+    <p>First Image</p>
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.LabelFor(model => model.ImagePath, new { @class = "control-label" })
+    @Html.LabelFor(model => model.Images[0], new { @class = "control-label" })
     <input type="file" name="ImageFile" required />
 
     <button type="submit">Save</button>

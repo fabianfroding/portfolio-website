@@ -24,10 +24,11 @@ namespace PortfolioWebsite.Models
         public string Description { get; set; }
 
         [DisplayName("Images")]
+        [NotMapped]
         public List<string> Images { get; set; }
 
         // Returns a string of all image filenames combined
-        // and adds a comma between each.
+        // and adds a comma between each. For database storage.
         public string ImagesToString()
         {
             string result = "";
@@ -47,9 +48,6 @@ namespace PortfolioWebsite.Models
             }
             return result;
         }
-
-        //========== Test ==========//
-        public string ImagePath { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }
