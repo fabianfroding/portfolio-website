@@ -28,13 +28,22 @@ namespace PortfolioWebsite.Models
 
         // Returns a string of all image filenames combined
         // and adds a comma between each.
-        // TODO: Prevent comma at the end.
         public string ImagesToString()
         {
             string result = "";
+            
             foreach (var image in Images)
             {
-                result += image + ",";
+                // Only add comma if current item is not the last item in the list.
+                // To prevent a comme at the end of the combined string.
+                if (Images.IndexOf(image) == Images.Count - 1)
+                {
+                    result += image;
+                }
+                else
+                {
+                    result += image + ",";
+                }
             }
             return result;
         }
