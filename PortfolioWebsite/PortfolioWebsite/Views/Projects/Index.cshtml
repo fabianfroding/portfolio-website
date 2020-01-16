@@ -12,7 +12,7 @@
     <img class="mySlides" src="@Url.Content(Model.ElementAt(0).Images?[0])">
     }
     <div class="slide-show-sub">
-        @for (var i = 1; i < Model.Length; i++)
+        @for (int i = 1; i < Model.Length; i++)
         {
             if (Model.ElementAt(0).Images?[0] != null)
             {
@@ -25,9 +25,9 @@
     <button class="next" onclick="plusDivs(+1)">&#10095;</button>
     <div style="text-align:center">
         <span class="dot active" onclick="currentSlide(1)"></span>
-        @for (var i = 1; i < Model.Length; i++)
+        @for (int i = 1; i < Model.Length; i++)
         {
-            <!-- <span class="dot" onclick="currentSlide(i)"></span> -->
+            <span class="dot"></span>
         }
     </div>
 </div>
