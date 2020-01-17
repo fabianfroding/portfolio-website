@@ -1,5 +1,4 @@
 ﻿var slideIndex = 1;
-var dotsCounter = 0;
 
 function plusDivs(n) {
     showDivs(slideIndex += n);
@@ -25,6 +24,11 @@ function showDivs(n) {
     dots[slideIndex - 1].className += " active";
 }
 
+function autoUpdate() {
+    plusDivs(+1);
+    setTimeout(autoUpdate, 5000);
+}
+
 window.onload = function () {
     var dots = document.getElementsByClassName("dot");
     dots[0].className = dots[0].className.replace("dot", "dot active");
@@ -36,4 +40,5 @@ window.onload = function () {
             }
         }(i+1), false);
     }
+    setTimeout(autoUpdate, 5000);
 }
