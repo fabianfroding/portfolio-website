@@ -25,10 +25,15 @@ function showDivs(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-function createDot(n) {
-    console.log("Hey");
+window.onload = function () {
     var dots = document.getElementsByClassName("dot");
+    dots[0].className = dots[0].className.replace("dot", "dot active");
     for (var i = 0; i < dots.length; i++) {
-        var newSpan = document.createElement('span');
+        dots[i].addEventListener('click', function (arg) {
+            return function ()
+            {
+                currentSlide(arg);
+            }
+        }(i+1), false);
     }
 }
