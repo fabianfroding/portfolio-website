@@ -32,8 +32,6 @@
 </div>
 <!-- end slideshow -->
 
-<button type="submit">@Html.ActionLink("New Project", "Add")</button>
-
 @foreach (var project in Model)
 {
     <h1>@Html.ActionLink(project.Title, "Detail", new { id = project.Id })</h1>
@@ -44,3 +42,5 @@
     </a>
     <p>@project.Description</p>
 }
+
+<button type="submit">@Html.ActionLink("New Project", "Add")</button>
