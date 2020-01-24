@@ -32,16 +32,14 @@ namespace PortfolioWebsite.Controllers
             {
                 return HttpNotFound();
             }
-            System.Diagnostics.Debug.WriteLine("ImagesAsString: " + _projectService.GetById(id.Value).ImagesAsString);
-
             return View(_projectService.GetById(id.Value));
         }
 
         [HttpGet]
         public ActionResult Add()
         {
-            ViewBag.Message = "Add";
-            return View();
+            ViewBag.Message = "Form";
+            return View("Form");
         }
 
         [HttpPost]
@@ -54,7 +52,23 @@ namespace PortfolioWebsite.Controllers
                 return RedirectToAction("Index");
             }
             ModelState.Clear();
-            return View();
+            return View("Form");
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Project project = _projectService.GetById(id.Value);
+
+            //project.Title = "NewTitle";
+            //project.Description = "New Descrption";
+            // Allow adding and removal of images. How to update?
+
+            return View("Form", project);
         }
     }
 }

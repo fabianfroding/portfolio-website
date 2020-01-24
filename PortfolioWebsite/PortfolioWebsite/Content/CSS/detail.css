@@ -3,3 +3,7 @@
     height: auto;
     display: block;
 }
+
+button[type="submit"]{
+    color: #111;
+}
