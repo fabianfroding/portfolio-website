@@ -153,7 +153,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Projects\Form.cshtml" />
+    <Content Include="Views\Projects\Add.cshtml" />
+    <Content Include="Views\Projects\_ProjectForm.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

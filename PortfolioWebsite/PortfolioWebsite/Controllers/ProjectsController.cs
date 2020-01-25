@@ -1,6 +1,7 @@
 ﻿using PortfolioWebsite.Models;
 using System.Web.Mvc;
 using PortfolioWebsite.Services;
+using System.Net;
 
 /* Action Result return types:
  * View(model);
@@ -38,8 +39,8 @@ namespace PortfolioWebsite.Controllers
         [HttpGet]
         public ActionResult Add()
         {
-            ViewBag.Message = "Form";
-            return View("Form");
+            Project project = new Project(); // Temp to avoid null exception in view.
+            return View(project);
         }
 
         [HttpPost]
@@ -52,23 +53,25 @@ namespace PortfolioWebsite.Controllers
                 return RedirectToAction("Index");
             }
             ModelState.Clear();
-            return View("Form");
+            return View();
         }
 
+        [HttpGet]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
             Project project = _projectService.GetById(id.Value);
 
-            //project.Title = "NewTitle";
-            //project.Description = "New Descrption";
-            // Allow adding and removal of images. How to update?
+            if (project == null)
+            {
+                return HttpNotFound();
+            }
 
-            return View("Form", project);
+            return View(project);
         }
     }
 }
