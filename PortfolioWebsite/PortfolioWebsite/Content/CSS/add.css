@@ -1,3 +1,7 @@
 ﻿input[type=file] {
     color: #fff;
 }
+
+button[type="submit"] {
+    color: #111;
+}
