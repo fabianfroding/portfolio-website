@@ -52,5 +52,10 @@ namespace PortfolioWebsite.Services
         {
             _projectRepository.Remove(project);
         }
+
+        public void Save(Project project)
+        {
+            _projectRepository.Save(project);
+        }
     }
 }

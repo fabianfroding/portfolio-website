@@ -9,5 +9,7 @@ namespace PortfolioWebsite.Services
         List<Project> GetAll();
         void Add(Project project, string serverMapPath);
         void Remove(Project project);
+
+        void Save(Project project);
     }
 }

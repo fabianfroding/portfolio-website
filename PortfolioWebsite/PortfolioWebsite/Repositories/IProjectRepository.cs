@@ -9,5 +9,6 @@ namespace PortfolioWebsite.Repositories
         List<Project> GetAll();
         void Add(Project project);
         void Remove(Project project);
+        void Save(Project project);
     }
 }

@@ -73,5 +73,16 @@ namespace PortfolioWebsite.Controllers
 
             return View(project);
         }
+
+        [HttpPost]
+        public ActionResult Edit(Project project)
+        {
+            if (ModelState.IsValid)
+            {
+                _projectService.Save(project);
+                return RedirectToAction("Index");
+            }
+            return View(project);
+        }
     }
 }

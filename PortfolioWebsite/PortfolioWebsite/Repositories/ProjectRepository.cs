@@ -37,6 +37,16 @@ namespace PortfolioWebsite.Repositories
             _projectContext.SaveChanges();
         }
 
+        public void Save(Project project)
+        {
+            _projectContext.Projects.Attach(project);
+            var entry = _projectContext.Entry(project);
+            entry.Property(e => e.Title).IsModified = true;
+            entry.Property(e => e.Description).IsModified = true;
+            entry.Property(e => e.ImagesAsString).IsModified = true;
+            _projectContext.SaveChanges();
+        }
+
         public void Dispose()
         {
             _projectContext.Dispose();
