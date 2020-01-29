@@ -10,6 +10,6 @@ namespace PortfolioWebsite.Services
         void Add(Project project, string serverMapPath);
         void Remove(Project project);
 
-        void Save(Project project);
+        void Save(Project project, string serverMapPath);
     }
 }

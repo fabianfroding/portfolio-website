@@ -79,7 +79,7 @@ namespace PortfolioWebsite.Controllers
         {
             if (ModelState.IsValid)
             {
-                _projectService.Save(project);
+                _projectService.Save(project, Server.MapPath("~/Images/"));
                 return RedirectToAction("Index");
             }
             return View(project);

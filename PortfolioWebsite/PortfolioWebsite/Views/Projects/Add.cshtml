@@ -6,4 +6,37 @@
 
 <h1>@ViewBag.Title</h1>
 
-@Html.Partial("_ProjectForm")
+@using (Html.BeginForm("Add", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Label("Title", new { @class = "control-label" })
+    <p>Project Title</p>
+    @Html.TextBox("Title", Model.Title, new { @class = "form-control" })
+
+    @Html.Label("Description", new { @class = "control-label" })
+    <p>Description</p>
+    @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
+
+    if (@Model.Images.Count > 0)
+    {
+        <ul>
+            @foreach (var image in @Model.Images)
+            {
+                <li class="detail-image">
+                    <img src="@Url.Content(image)">
+                </li>
+            }
+        </ul>
+    }
+
+    <div class="add-project-file-select">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.Images[0], new { @class = "control-label" })
+        <input type="file" name="ImageFile" required />
+
+        <button type="submit">Save</button>
+        <a href="@Url.Action("Index")">Cancel</a>
+    </div>
+
+}
