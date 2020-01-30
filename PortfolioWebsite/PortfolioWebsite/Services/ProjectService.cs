@@ -34,17 +34,7 @@ namespace PortfolioWebsite.Services
 
         public void Add(Project project, string serverMapPath)
         {
-            string fileName = 
-                Path.GetFileNameWithoutExtension(project.ImageFile.FileName) +
-                DateTime.Now.ToString("yymmssfff") +
-                Path.GetExtension(project.ImageFile.FileName);
-            // Remove commas from the filename to prevent problems with
-            // comma-separation which is used in the Project class.
-            fileName = fileName.Replace(",", "");
-            project.Images.Add("~/Images/" + fileName);
-            fileName = Path.Combine(serverMapPath, fileName);
-            project.ImageFile.SaveAs(fileName);
-
+            SetProjectImageFile(project, serverMapPath);
             _projectRepository.Add(project);
         }
 
@@ -54,6 +44,12 @@ namespace PortfolioWebsite.Services
         }
 
         public void Save(Project project, string serverMapPath)
+        {
+            SetProjectImageFile(project, serverMapPath);
+            _projectRepository.Save(project);
+        }
+
+        private void SetProjectImageFile(Project project, string serverMapPath)
         {
             string fileName =
                 Path.GetFileNameWithoutExtension(project.ImageFile.FileName) +
@@ -65,8 +61,6 @@ namespace PortfolioWebsite.Services
             project.Images.Add("~/Images/" + fileName);
             fileName = Path.Combine(serverMapPath, fileName);
             project.ImageFile.SaveAs(fileName);
-
-            _projectRepository.Save(project);
         }
     }
 }
