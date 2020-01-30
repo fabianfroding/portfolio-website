@@ -33,6 +33,7 @@ namespace PortfolioWebsite.Repositories
 
         public void Remove(Project project)
         {
+            _projectContext.Projects.Attach(project);
             _projectContext.Projects.Remove(project);
             _projectContext.SaveChanges();
         }

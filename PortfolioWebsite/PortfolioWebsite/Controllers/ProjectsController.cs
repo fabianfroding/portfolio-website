@@ -84,5 +84,11 @@ namespace PortfolioWebsite.Controllers
             }
             return View(project);
         }
+
+        public ActionResult Remove(Project project)
+        {
+            _projectService.Remove(project);
+            return RedirectToAction("Index");
+        }
     }
 }
