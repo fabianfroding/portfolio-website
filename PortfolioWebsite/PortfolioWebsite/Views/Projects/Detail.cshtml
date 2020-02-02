@@ -19,5 +19,7 @@
         </ul>
 }
 
-<button type="submit">@Html.ActionLink("Edit Project", "Edit", new { id = Model.Id })</button>
-<button type="submit">@Html.ActionLink("Delete Project", "Remove", new { id = Model.Id })</button>
+<div class="edit-buttons">
+    <button type="submit">@Html.ActionLink("Edit Project", "Edit", new { id = Model.Id })</button>
+    <button type="submit">@Html.ActionLink("Delete Project", "Remove", new { id = Model.Id })</button>
+</div>

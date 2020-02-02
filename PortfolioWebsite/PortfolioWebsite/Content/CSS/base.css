@@ -33,6 +33,10 @@ button :visited {
     color: #14171c;
 }
 
+button a:link {
+    color: #14171c;
+}
+
 /* -------------------------
     Media Queries
 ------------------------- */
