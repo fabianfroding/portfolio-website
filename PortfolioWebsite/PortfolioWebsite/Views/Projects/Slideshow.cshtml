@@ -1,0 +1,31 @@
+﻿@model PortfolioWebsite.Models.Project[]
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Slideshow";
+}
+
+<div class="slideshow">
+    @if (Model.ElementAt(0).Images?[0] != null)
+    {
+        <img class="mySlides" src="@Url.Content(Model.ElementAt(0).Images?[0])">
+    }
+    <div class="slide-show-sub">
+        @for (int i = 1; i < Model.Length; i++)
+        {
+            if (Model.ElementAt(0).Images?[0] != null)
+            {
+                <img class="mySlides fade" src="@Url.Content(Model.ElementAt(i).Images?[0])">
+            }
+        }
+    </div>
+
+    <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="next" onclick="plusDivs(+1)">&#10095;</button>
+    <div style="text-align:center">
+        @for (var i = 0; i < Model.Length; i++)
+        {
+            <span class="dot"></span>
+        }
+    </div>
+</div>

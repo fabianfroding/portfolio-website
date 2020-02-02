@@ -27,6 +27,11 @@ namespace PortfolioWebsite.Controllers
             return View(_projectService.GetAll().ToArray());
         }
 
+        public ActionResult Slideshow()
+        {
+            return View(_projectService.GetAll().ToArray());
+        }
+
         public ActionResult Detail(int? id)
         {
             if (id == null)

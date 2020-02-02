@@ -155,6 +155,7 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Projects\Add.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Slideshow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
