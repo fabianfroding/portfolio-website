@@ -115,6 +115,7 @@
     <Content Include="Images\temp\wish-1.jpg" />
     <Content Include="Images\temp\wish-2.jpg" />
     <Content Include="notes.txt" />
+    <Content Include="Scripts\addImageUploadField.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Images\logo.psd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

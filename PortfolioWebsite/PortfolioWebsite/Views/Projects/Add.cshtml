@@ -30,13 +30,15 @@
         </ul>
     }
 
-    <div class="add-project-file-select">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.LabelFor(model => model.Images[0], new { @class = "control-label" })
-        <input type="file" name="ImageFile" required />
+<div class="add-project-file-select">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.LabelFor(model => model.Images[0], new { @class = "control-label" })
+    <input type="file" name="ImageFile" required />
+    <button class="add-image-upload-field" onlick="addImageUploadField()">+</button>
 
-        <button type="submit">Save</button>
-        <a href="@Url.Action("Index")">Cancel</a>
-    </div>
+    <br />
+    <button type="submit">Save</button>
+    <a href="@Url.Action("Index")">Cancel</a>
+</div>
 
 }
