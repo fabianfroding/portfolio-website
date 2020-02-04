@@ -157,6 +157,7 @@
     <Content Include="Views\Projects\Add.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Projects\Slideshow.cshtml" />
+    <Content Include="Views\Projects\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

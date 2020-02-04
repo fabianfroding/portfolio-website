@@ -32,6 +32,11 @@ namespace PortfolioWebsite.Services
             return projects;
         }
 
+        public List<Project> GetAllByTitle(string title)
+        {
+            return _projectRepository.GetAllByTitle(title);
+        }
+
         public void Add(Project project, string serverMapPath)
         {
             SetProjectImageFile(project, serverMapPath);

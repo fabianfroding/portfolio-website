@@ -25,6 +25,11 @@ namespace PortfolioWebsite.Repositories
             return _projectContext.Projects.ToList();
         }
 
+        public List<Project> GetAllByTitle(string title)
+        {
+            return _projectContext.Projects.Where(x => x.Title.ToLower().Contains(title) || title == null).ToList();
+        }
+
         public void Add(Project project)
         {
             _projectContext.Projects.Add(project);

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PortfolioWebsite.Models.Project>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Search";
+}
+
+<div class="search-container">
+    @using (Html.BeginForm("Search", "ProjectsController", FormMethod.Get))
+    {
+        <p>Search &#x1F50E;</p>
+        @Html.TextBox("search") <input type="submit" value="Search" />
+
+        if (Model.Count() == 0)
+        {
+            <p>No projects found!</p>
+        }
+        else
+        {
+            foreach (var project in Model)
+            {
+                <h1>@Html.ActionLink(project.Title, "Detail", new { id = project.Id })</h1>
+                <a href="@Url.Action("Detail", new { id = project.Id })">
+                    <div class="project-preview">
+                        <img src="@Url.Content(project.Images[0])">
+                    </div>
+                </a>
+            }
+        }
+
+
+    }
+
+</div>
+

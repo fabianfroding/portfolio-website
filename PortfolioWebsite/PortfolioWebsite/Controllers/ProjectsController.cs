@@ -32,6 +32,12 @@ namespace PortfolioWebsite.Controllers
             return View(_projectService.GetAll().ToArray());
         }
 
+        [HttpGet]
+        public ActionResult Search(string search)
+        {
+            return View(_projectService.GetAllByTitle(search).ToArray());
+        }
+
         public ActionResult Detail(int? id)
         {
             if (id == null)
