@@ -33,9 +33,9 @@ namespace PortfolioWebsite.Controllers
         }
 
         [HttpGet]
-        public ActionResult Search(string search)
+        public ActionResult Search(string searchText)
         {
-            return View(_projectService.GetAllByTitle(search).ToArray());
+            return View(_projectService.GetAllByTitle(searchText).ToArray());
         }
 
         public ActionResult Detail(int? id)

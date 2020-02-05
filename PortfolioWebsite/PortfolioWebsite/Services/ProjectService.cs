@@ -32,9 +32,9 @@ namespace PortfolioWebsite.Services
             return projects;
         }
 
-        public List<Project> GetAllByTitle(string title)
+        public List<Project> GetAllByTitle(string searchText)
         {
-            return _projectRepository.GetAllByTitle(title);
+            return _projectRepository.GetAllByTitle(searchText);
         }
 
         public void Add(Project project, string serverMapPath)
