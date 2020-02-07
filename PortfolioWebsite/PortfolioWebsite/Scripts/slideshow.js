@@ -1,7 +1,13 @@
 ﻿var slideIndex = 1;
+var slideTimer;
 
 function plusDivs(n) {
     showDivs(slideIndex += n);
+    if (slideTimer) {
+        clearTimeout(slideTimer);
+        slideTimer = null;
+    }
+    slideTimer = setTimeout(autoUpdate, 5000);
 }
 
 function currentSlide(n) {
@@ -29,7 +35,7 @@ function showDivs(n) {
 
 function autoUpdate() {
     plusDivs(+1);
-    setTimeout(autoUpdate, 5000);
+    
 }
 
 window.onload = function () {
@@ -43,6 +49,6 @@ window.onload = function () {
                 }
             }(i + 1), false);
         }
-        setTimeout(autoUpdate, 5000);
+        slideTimer = setTimeout(autoUpdate, 5000);
     }
 }
