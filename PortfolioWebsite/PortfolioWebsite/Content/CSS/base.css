@@ -37,6 +37,11 @@ button a:link {
     color: #14171c;
 }
 
+.footer-div {
+    width: 200px;
+    margin: 0 auto;
+}
+
 /* -------------------------
     Media Queries
 ------------------------- */
