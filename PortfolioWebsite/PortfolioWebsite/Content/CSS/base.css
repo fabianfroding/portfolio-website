@@ -38,16 +38,6 @@ button a:link {
 }
 
 .footer-div {
-    width: 200px;
+    width: 150px;
     margin: 0 auto;
-}
-
-/* -------------------------
-    Media Queries
-------------------------- */
-
-@media (min-width: 980px) {
-    body {
-        padding-top: 70px;
-    }
 }

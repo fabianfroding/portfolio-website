@@ -3,8 +3,8 @@
 }
 
 .slideshow img {
-    width: 250px;
-    height: 180px;
+    width: 500px;
+    height: 360px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -19,13 +19,14 @@
     position: absolute;
     top: 50%;
     width: auto;
-    margin-top: -115px;
-    padding: 4px;
+    margin-top: -22px;
+    border: none;
     color: #888;
     background-color: transparent;
     font-weight: bold;
-    font-size: 9px;
+    font-size: 18px;
     transition: 0.6s ease;
+    padding: 4px;
 }
 
 .next {
@@ -74,30 +75,5 @@
 
     to {
         opacity: 1
-    }
-}
-
-/* -------------------------
-    Media Queries
-------------------------- */
-
-@media (min-width: 980px) {
-    .slideshow img {
-        width: 500px;
-        height: 360px;
-    }
-
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        margin-top: -22px;
-        border: none;
-        color: #888;
-        background-color: transparent;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
     }
 }
