@@ -38,6 +38,12 @@ namespace PortfolioWebsite.Controllers
             return View(_projectService.GetAllByTitle(searchText).ToArray());
         }
 
+        [HttpGet]
+        public ActionResult Grid()
+        {
+            return View(_projectService.GetAll().ToArray());
+        }
+
         public ActionResult Detail(int? id)
         {
             if (id == null)

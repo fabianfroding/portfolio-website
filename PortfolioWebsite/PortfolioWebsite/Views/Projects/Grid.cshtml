@@ -1,0 +1,17 @@
+﻿@model PortfolioWebsite.Models.Project[]
+
+@{
+    ViewBag.Title = "Grid";
+}
+
+<div class="grid">
+    @foreach(var project in Model)
+    {
+        <a href="@Url.Action("Detail", new { id = project.Id })">
+            <div class="project-preview">
+                <img src="@Url.Content(project.Images[0])" />
+            </div>
+        </a>
+    }
+</div>
+

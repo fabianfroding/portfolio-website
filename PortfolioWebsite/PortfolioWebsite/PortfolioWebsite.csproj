@@ -100,6 +100,7 @@
     <Content Include="Content\CSS\add.css" />
     <Content Include="Content\CSS\base.css" />
     <Content Include="Content\CSS\detail.css" />
+    <Content Include="Content\CSS\grid.css" />
     <Content Include="Content\CSS\header.css" />
     <Content Include="Content\CSS\index-list.css" />
     <Content Include="Content\CSS\slideshow.css" />
@@ -158,6 +159,7 @@
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Projects\Slideshow.cshtml" />
     <Content Include="Views\Projects\Search.cshtml" />
+    <Content Include="Views\Projects\Grid.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
