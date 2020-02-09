@@ -18,18 +18,6 @@
     <p>Description</p>
     @Html.TextArea("Description", null, 14, 20, new { @class = "form-control" })
 
-    if (@Model.Images.Count > 0)
-    {
-        <ul>
-            @foreach (var image in @Model.Images)
-            {
-                <li class="detail-image">
-                    <img src="@Url.Content(image)">
-                </li>
-            }
-        </ul>
-    }
-
 <div class="add-project-file-select">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.LabelFor(model => model.Images[0], new { @class = "control-label" })
