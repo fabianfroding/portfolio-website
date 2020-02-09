@@ -9,9 +9,15 @@
     justify-content: flex-end; /* Places main header at bottom/end of column */
     flex-direction: row;
     padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 3px rgb(0, 0, 0, .4);
+    z-index: 1;
 }
 
 .site-logo {
+    align-self: center;
     width: 140px;
     margin-right: auto;
     padding-left: 1em;
@@ -23,8 +29,30 @@
     height: 41px;
 }
 
+.nav {
+    position: relative;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .nav a {
+    display: block;
+    border-bottom: 1px solid #EAEAEB;
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.125em;
+    font-weight: 300;
+    text-align: center;
+    padding: .4em;
+    padding-top: 1em;
+    text-decoration: none;
     border-bottom-color: transparent;
+}
+
+.nav a:hover {
+    color: #c89960;
 }
 
 .nav li {
@@ -32,17 +60,18 @@
     margin-right: .65em;
 }
 
-.nav a:hover {
-    color: #c89960;
-}
-
 label {
+    cursor: pointer;
+    color: #ffffff;
+    margin-bottom: 5px;
+    flex-direction: row;
+    padding-right: 1em;
+    align-self: center;
     display: none;
     margin: 0 40px 0 0;
     font-size: 26px;
     line-height: 70px;
 }
-
 
 #toggle {
     display: none;
@@ -52,64 +81,4 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-/* -------------------------
-    Media Queries
-------------------------- */
-
-@media (max-width: 980px) {
-    .main-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        box-shadow: 0 2px 3px rgb(0, 0, 0, .4);
-        z-index: 1;
-    }
-
-    .site-logo {
-        width: 110px;
-        align-self: center;
-        padding-left: 0.5em;
-        padding-top: 0.5em;
-    }
-
-    .nav {
-        display: none;
-        position: relative;
-        padding-right: 1em;
-    }
-
-    .nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .nav a {
-        display: block;
-        border-bottom: 1px solid #EAEAEB;
-        margin: 0;
-        color: #ffffff;
-        font-size: 1.125em;
-        font-weight: 300;
-        text-align: center;
-        padding: .4em;
-        padding-top: 1em;
-        text-decoration: none;
-    }
-
-    label {
-        display: block;
-        cursor: pointer;
-        color: #ffffff;
-        margin-bottom: 5px;
-        flex-direction: row;
-        padding-right: 1em;
-        align-self: center;
-    }
-
-    #toggle:checked + .nav {
-        display: block;
-    }
 }
