@@ -14,6 +14,7 @@
     width: 100%;
     box-shadow: 0 2px 3px rgb(0, 0, 0, .4);
     z-index: 1;
+    transition: .5s;
 }
 
 .site-logo {
@@ -27,6 +28,7 @@
 .site-logo img {
     width: 85px;
     height: 41px;
+    transition: .5s;
 }
 
 .nav {
@@ -35,6 +37,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    transition: .5s;
 }
 
 .nav a {
@@ -58,6 +61,10 @@
 .nav li {
     margin-left: .65em;
     margin-right: .65em;
+}
+
+.nav-item {
+    transition: .5s;
 }
 
 label {
