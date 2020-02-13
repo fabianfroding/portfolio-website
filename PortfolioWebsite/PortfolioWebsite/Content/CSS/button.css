@@ -1,4 +1,6 @@
-﻿input[type=file] {
+﻿/* Custom style for buttons to fit the theme of the website */
+
+input[type=file] {
     color: #fff;
 }
 

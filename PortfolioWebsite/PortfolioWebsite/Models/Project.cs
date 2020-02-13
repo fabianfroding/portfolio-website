@@ -34,7 +34,7 @@ namespace PortfolioWebsite.Models
         }
 
         [NotMapped]
-        public HttpPostedFileBase ImageFile { get; set; }
+        public List<HttpPostedFileBase> ImageFiles { get; set; }
 
     }
 }
