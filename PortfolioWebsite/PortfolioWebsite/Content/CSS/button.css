@@ -12,4 +12,5 @@ button[type="submit"] {
     border: none;
     color: #eee;
     background-color: #25382d; /* Site BG: #14171c; */
+    display: inline-block;
 }
