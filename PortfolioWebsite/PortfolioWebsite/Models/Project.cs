@@ -12,6 +12,7 @@ namespace PortfolioWebsite.Models
         public Project()
         {
             Images = new List<string>();
+            ImageFiles = new List<HttpPostedFileBase>();
         }
         
         public int Id { get; set; }

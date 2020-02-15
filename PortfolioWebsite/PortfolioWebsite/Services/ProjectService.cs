@@ -50,7 +50,14 @@ namespace PortfolioWebsite.Services
 
         public void Save(Project project, string serverMapPath)
         {
-            SetProjectImageFiles(project, serverMapPath);
+            // Get old images.
+            List<String> existingImages = _projectRepository.GetById(project.Id).Images;
+            project.Images.AddRange(existingImages);
+            // TODO: Fix obj ref not set ot inst of obj...
+            if (project.ImageFiles.Count > 0)
+            {
+               SetProjectImageFiles(project, serverMapPath);
+            }
             _projectRepository.Save(project);
         }
 

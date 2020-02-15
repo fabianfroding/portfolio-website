@@ -8,7 +8,7 @@ button[type="submit"] {
     color: #111;
 }
 
-.add-image-upload-field {
+.remove-image-button {
     border: none;
     color: #eee;
     background-color: #25382d; /* Site BG: #14171c; */
