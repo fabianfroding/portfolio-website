@@ -94,12 +94,19 @@ namespace PortfolioWebsite.Controllers
         [HttpPost]
         public ActionResult Edit(Project project)
         {
-            if (ModelState.IsValid)
+            if (Request.Form["save-project"] != null)
             {
-                _projectService.Save(project, Server.MapPath("~/Images/"));
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    _projectService.Save(project, Server.MapPath("~/Images/"));
+                    return RedirectToAction("Index");
+                }
             }
-            return View(project);
+            else if (Request.Form["delete-project-image"] != null)
+            {
+                System.Diagnostics.Debug.WriteLine("Delete image button clicked");
+            }
+            return View(project); // After click dlete img btn, doesnt list any images after refreshing view.
         }
 
         public ActionResult Remove(Project project)

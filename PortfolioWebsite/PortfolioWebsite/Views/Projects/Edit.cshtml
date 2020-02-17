@@ -25,7 +25,7 @@
     {
     <li class="detail-image">
         <img src="@Url.Content(image)">
-        <button class="remove-image-button">&#10006;</button>
+        <button class="remove-image-button" name="delete-project-image">&#10006;</button>
     </li> 
     }
 </ul>
@@ -37,7 +37,7 @@
         <input type="file" name="ImageFiles" />
 
         <br />
-        <button type="submit">Save</button>
+        <button type="submit" name="save-project">Save</button>
         <a href="@Url.Action("Index")">Cancel</a>
     </div>
 

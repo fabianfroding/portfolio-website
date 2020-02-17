@@ -54,7 +54,10 @@ namespace PortfolioWebsite.Services
             project.Images.AddRange(existingImages);
             if (project.ImageFiles.Count > 0)
             {
-                SetProjectImageFiles(project, serverMapPath);
+                if (!IsProjectImageFilesEmpty(project))
+                {
+                    SetProjectImageFiles(project, serverMapPath);
+                }
             }
             _projectRepository.Save(project);
         }
@@ -74,6 +77,20 @@ namespace PortfolioWebsite.Services
                 fileName = Path.Combine(serverMapPath, fileName);
                 project.ImageFiles[i].SaveAs(fileName);
             }
+        }
+
+        private bool IsProjectImageFilesEmpty(Project project)
+        {
+            for (int i = 0; i < project.ImageFiles.Count; i++)
+            {
+                if (project.ImageFiles[i] != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("ImageFiles not null");
+                    return false;
+                }
+            }
+            System.Diagnostics.Debug.WriteLine("ImageFiles null");
+            return true;
         }
     }
 }
