@@ -76,6 +76,7 @@ namespace PortfolioWebsite.Controllers
         [HttpGet]
         public ActionResult Edit(int? id)
         {
+            System.Diagnostics.Debug.WriteLine("HttpGet Edit called in controller");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

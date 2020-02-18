@@ -20,15 +20,16 @@
 
     if (@Model.Images.Count > 0)
     {
-<ul>
-    @foreach (var image in @Model.Images)
-    {
-    <li class="detail-image">
-        <img src="@Url.Content(image)">
-        <button class="remove-image-button" name="delete-project-image">&#10006;</button>
-    </li> 
-    }
-</ul>
+        <ul>
+            @foreach (var image in @Model.Images)
+            {
+                <li class="detail-image">
+                    <img src="@Url.Content(image)">
+                    <button class="remove-image-button" name="delete-project-image" onclick="deleteProjectImage()">&#10006;</button>
+                </li>
+
+            }
+        </ul>
     }
 
     <div class="add-project-file-select">
