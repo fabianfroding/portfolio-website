@@ -38,6 +38,6 @@ button a:link {
 }
 
 .footer-div {
-    width: 150px;
+    width: 122px; /*Width of the text. If text changes, modify this*/
     margin: 0 auto;
 }
