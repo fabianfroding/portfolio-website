@@ -1,9 +1,10 @@
 ﻿.grid {
-    position: center;
+    width: 50%;
+    margin-left: 25%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: 100px;
+    grid-row-gap: 50px;
 }
 
 .grid img {
